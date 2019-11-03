@@ -6,6 +6,8 @@
 # You may obtain a copy of the License at
 #
 #     http://www.apache.org/licenses/LICENSE-2.0
+
+
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,24 +16,24 @@
 # limitations under the License.
 #!/bin/bash
 
-'''
-replicas: An argument for parallel preprocessing. For example, when replicas=3,
-we divide the data into three parts, and only process one part
-according to the worker_id.
-'''
+#'''
+#replicas: An argument for parallel preprocessing. For example, when replicas=3,
+#we divide the data into three parts, and only process one part
+#according to the worker_id.
+#'''
 replicas=1
 worker_id=0
 
-'''
-input_file: The file to be back translated. We assume that each paragraph is in
-a separate line
-'''
+#'''
+#input_file: The file to be back translated. We assume that each paragraph is in
+#a separate line
+#'''
 input_file=example_file.txt
 
-'''
-sampling_temp: The sampling temperature for translation. See README.md for more
-details.
-'''
+#'''
+#sampling_temp: The sampling temperature for translation. See README.md for more
+#details.
+#'''
 sampling_temp=0.8
 
 

@@ -1,3 +1,4 @@
 *.pyc
 *ckpt*
 *__pycache__*
+./checkpoints
