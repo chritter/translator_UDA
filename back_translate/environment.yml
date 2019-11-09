@@ -1,0 +1,6 @@
+name: env
+channels:
+  - conda-forge
+  - defaults
+prefix: /Users/christian/.conda/envs/env
+
