@@ -25,24 +25,33 @@ RUN pip install tensor2tensor
 
 #RUN conda activate env
 
+# download the NN checkpoints
+RUN wget https://storage.googleapis.com/uda_model/text/back_trans_checkpoints.zip
+RUN unzip back_trans_checkpoints.zip && rm back_trans_checkpoints.zip
+#RUN ./download.sh
+
+
 #RUN pip install
-
-# copy entire directory where docker file is into docker container at /work
-WORKDIR /work
-COPY . /work/
-
-
 
 RUN python -m nltk.downloader punkt
 
-RUN ./download.sh
 
 ## download the checkpoint files
 #RUN download.sh
 
 
 ENTRYPOINT [ "/usr/bin/tini", "--" ]
-CMD './run.sh'
+#CMD './run.sh'
+
+# hint that port will be used for API
+EXPOSE 8000
+
+# copy entire directory where docker file is into docker container at /work
+WORKDIR /work
+COPY . /work/
+
+# start the API
+CMD './start_api.sh'
 #CMD '/bin/bash'
 
 # uvicorn api:app --reload
