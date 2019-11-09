@@ -11,8 +11,8 @@ RUN apt-get install -y curl grep sed dpkg && \
 
 RUN apt-get install -y gcc zip
 
-#RUN conda create -n env python=3.6
-RUN conda create -n env python=2.7
+RUN conda create -n env python=3.6
+#RUN conda create -n env python=2.7
 
 #RUN conda init bash
 RUN echo "source activate env" > ~/.bashrc
