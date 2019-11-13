@@ -1,4 +1,4 @@
 *.pyc
 *ckpt*
 *__pycache__*
-./checkpoints
+back_translate/checkpoints

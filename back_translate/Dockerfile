@@ -19,15 +19,15 @@ RUN echo "source activate env" > ~/.bashrc
 ENV PATH /opt/conda/envs/env/bin:$PATH
 RUN conda install -n env absl-py nltk tensorflow==1.14
 RUN /bin/bash
-RUN pip install tensor2tensor
+RUN pip install tensor2tensor uvicorn fastapi
 
 # RUN pip install fastapi uvicorn
 
 #RUN conda activate env
 
 # download the NN checkpoints
-RUN wget https://storage.googleapis.com/uda_model/text/back_trans_checkpoints.zip
-RUN unzip back_trans_checkpoints.zip && rm back_trans_checkpoints.zip
+#RUN wget https://storage.googleapis.com/uda_model/text/back_trans_checkpoints.zip
+#RUN unzip back_trans_checkpoints.zip && rm back_trans_checkpoints.zip
 #RUN ./download.sh
 
 
@@ -49,6 +49,10 @@ EXPOSE 8000
 # copy entire directory where docker file is into docker container at /work
 WORKDIR /work
 COPY . /work/
+#COPY *.py /work/
+#COPY *.sh /work/
+#COPY checkpoints /work/checkpoints
+
 
 # start the API
 CMD './start_api.sh'

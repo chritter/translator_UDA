@@ -46,9 +46,11 @@ def translate_fr_to_english(french_text):
     try:
         with open('back_trans_data/paraphrase/file_0_of_1.json') as f:
             print('translation from file:')
-            print(f.readlines())
+            lines = f.readlines()
+            print(lines)
+            return_lines = ''.join(lines)
     except:
         print('translated file not available. Error!')
+        return_lines = 'translated file not available. Error!'
 
-
-
+    return return_lines
