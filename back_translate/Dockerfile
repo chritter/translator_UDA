@@ -51,7 +51,7 @@ WORKDIR /work
 COPY . /work/
 #COPY *.py /work/
 #COPY *.sh /work/
-#COPY checkpoints /work/checkpoints
+#COPY checkpoints /work/checkpoints #
 
 
 # start the API
