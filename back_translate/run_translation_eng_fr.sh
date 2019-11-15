@@ -39,14 +39,14 @@ python split_paragraphs.py \
   --worker_id=${worker_id} \
 
 
-echo "*** translation Fr En ***"
+echo "*** translation En Fr ***"
 t2t-decoder \
-  --problem=translate_enfr_wmt32k_rev \
+  --problem=translate_enfr_wmt32k \
   --model=transformer \
   --hparams_set=transformer_big \
   --hparams="sampling_method=random,sampling_temp=${sampling_temp}" \
-  --decode_hparams="beam_size=1,batch_size=16,alpha=0" \
-  --checkpoint_path=checkpoints/fren/model.ckpt-500000 \
+  --decode_hparams="beam_size=1,batch_size=16" \
+  --checkpoint_path=checkpoints/enfr/model.ckpt-500000 \
   --output_dir=/tmp/t2t \
   --decode_from_file=${src_dir}/file_${worker_id}_of_${replicas}.txt \
   --decode_to_file=${gen_dir}/file_${worker_id}_of_${replicas}.txt \
